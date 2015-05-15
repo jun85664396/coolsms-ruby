@@ -40,8 +40,7 @@ class Send
   end
 
   def fields(*keys)
-    auth = Auth.new
-    field = { api_key: auth.api_key, signature: auth.signature, timestamp: auth.timestamp, salt: auth.salt}
+    field = Auth.new.auth
     keys.each do |key|
       if self.class.instance_methods.include? key
         field[key] = self.public_send(key)
