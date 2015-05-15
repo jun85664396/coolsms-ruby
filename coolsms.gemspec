@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["JunSangPil"]
   spec.email         = ["jun85664396@gmail.com"]
   spec.summary       = %q{coolsms Rest API helper}
-  spec.description   = %q{The coolsms ruby module not supporting. so I have made ruby module.}
+  spec.description   = %q{coolsms Rest API helper, made by customer}
   spec.homepage      = "http://github.com/jun85664396"
   spec.license       = "MIT"
 
