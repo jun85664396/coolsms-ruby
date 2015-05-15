@@ -1,13 +1,7 @@
-require_relative "auth"
 class Send
-  #URI
-  attr_accessor :uri
 
   #SMS Type default : SMS
   attr_accessor :type
-
-  #Salt
-  attr_accessor :salt
 
   #Charset
   attr_accessor :charset
@@ -42,25 +36,8 @@ class Send
   protected 
 
   def initialize(options = {})
-    self.uri = URI("https://api.coolsms.co.kr/")
-    options.each do |key, value|
-      self.public_send( "#{key}=", value ) if self.class.instance_methods.include? key
-    end
+    self.set_fields(options)
   end
-
-  public
-
-  def send (from, to, text)
-    fields = self.fields( :type, :charset, :datetime, :delay )
-    fields = fields.merge(from: from, to: to, text: text, type: self.type )
-    res = Net::HTTP.post_form(self.uri+"/1/send", fields)
-    if res.code == "200"
-      body = JSON.parse(res.body)
-      { ret: body['result_code'] == "00", message: body['result_message'], code: res.code }
-    else
-      { ret: false, code: res.code }
-    end
-  end 
 
   def fields(*keys)
     auth = Auth.new
@@ -71,6 +48,27 @@ class Send
       end
     end
     return field
+  end
+
+  public
+
+  def send(from, to, text)
+    fields = self.fields( :type, :charset, :datetime, :delay, :refname, :country, :subject, :srk, :mode, :extension, :force_sms )
+    fields = fields.merge(from: from, to: to, text: text, type: self.type )
+
+    res = Request.new.post( "send", fields )
+    if res.code == "200"
+      body = JSON.parse(res.body)
+      { ret: body['result_code'] == "00", message: body['result_message'], code: res.code }
+    else
+      { ret: false, code: res.code }
+    end
+  end 
+
+  def set_fields(options)
+    options.each do |key, value|
+      self.public_send( "#{key}=", value ) if self.class.instance_methods.include? key
+    end
   end
 
 end
