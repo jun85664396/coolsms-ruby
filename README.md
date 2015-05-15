@@ -1,6 +1,6 @@
 # Coolsms
 
-TODO: Write a gem description
+coolsms Rest API helper
 
 ## Installation
 
@@ -18,9 +18,37 @@ Or install it yourself as:
 
     $ gem install coolsms
 
-## Usage
+## Configuration
 
-TODO: Write usage instructions here
+- `ENV['COOLSMS_KEY']` and `ENV['COOLSMS_SECRET_KEY']`
+
+## Usage 
+
+- ####Send
+
+        COOLSMS_SEND = Coolsms::SMS::Send.new( { options } )
+        COOLSMS_SEND.send( from, to, text)
+    Options
+    - type
+    - charset
+    - datetime
+    - delay
+    - refname
+    - country
+    - subject
+    - srk
+    - mode
+    - extension
+    - force_sms
+
+    Methods
+    - send
+    - set_field
+    
+        
+## Coolsms Rest API Document
+
+http://www.coolsms.co.kr/REST_API_Global
 
 ## Contributing
 
