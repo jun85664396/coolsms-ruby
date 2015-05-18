@@ -28,6 +28,7 @@ Or install it yourself as:
 
         COOLSMS_SEND = Coolsms::SMS::Send.new( { options } )
         COOLSMS_SEND.send( from, to, text)
+        COOLSMS_SEND.set_field( { options} )
     Options
     - type
     - charset
@@ -45,6 +46,13 @@ Or install it yourself as:
     - send
     - set_field
     
+- ####Balance
+
+        COOLSMS_BALANCE = Coolsms::SMS::Balance.new
+        COOLSMS_BALANCE.balance
+    
+    Methods
+    - balance
         
 ## Coolsms Rest API Document
 

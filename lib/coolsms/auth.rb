@@ -15,7 +15,6 @@ class Auth
   def initialize
     self.api_key ||= ENV['COOLSMS_KEY']
     self.api_secret ||= ENV['COOLSMS_SECRET_KEY']
-
   end
 
   def signature
@@ -25,5 +24,8 @@ class Auth
     OpenSSL::HMAC.hexdigest( "md5", self.api_secret, hmac_data )
   end
 
+  def auth
+    { api_key: self.api_key, signature: self.signature, timestamp: self.timestamp, salt: self.salt }
+  end
 
 end
