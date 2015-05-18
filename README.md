@@ -53,7 +53,20 @@ Or install it yourself as:
     
     Methods
     - balance
-        
+
+- ####Status
+
+        COOLSMS_STATUS = Coolsms::SMS::Balance.new( options )
+        COOLSMS_STATUS.status
+    Options
+    - count
+    - unit
+    - date
+    - channel
+    
+    Methods
+    - status
+    
 ## Coolsms Rest API Document
 
 http://www.coolsms.co.kr/REST_API_Global
