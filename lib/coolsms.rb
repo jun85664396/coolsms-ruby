@@ -1,3 +1,9 @@
+# @name                Coolsms Rest API Helper
+# @author              JunSangPil
+# @version             0.1.0
+# @url                 http://github.com/jun85664396/coolsms
+# @license             MIT License
+
 require "coolsms/version"
 require 'securerandom'
 require 'net/http'
@@ -8,6 +14,8 @@ require_relative "coolsms/request"
 require_relative 'coolsms/send'
 require_relative 'coolsms/balance'
 require_relative 'coolsms/status'
+require_relative 'coolsms/sent'
+require_relative 'coolsms/cancel'
 
 module Coolsms
   class SMS
@@ -15,6 +23,8 @@ module Coolsms
     Send = Class.new(Send)
     Balance = Class.new(Balance)
     Status = Class.new(Status)
-  
+    Sent = Class.new(Sent)
+    Cancel = Class.new(Cancel)
+
   end
 end

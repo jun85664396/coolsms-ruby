@@ -24,7 +24,7 @@ Or install it yourself as:
 
 ## Usage 
 
-- ####Send
+- ####Send < Applications
 
         COOLSMS_SEND = Coolsms::SMS::Send.new( { options } )
         COOLSMS_SEND.send( from, to, text)
@@ -54,7 +54,7 @@ Or install it yourself as:
     Methods
     - balance
 
-- ####Status
+- ####Status < Applications
 
         COOLSMS_STATUS = Coolsms::SMS::Balance.new( options )
         COOLSMS_STATUS.status
@@ -66,7 +66,52 @@ Or install it yourself as:
     
     Methods
     - status
+
+- ####Sent < Applications
+
+        COOLSMS_SENT = Coolsms::SMS::Sent.new( options )
+        COOLSMS_SENT.sent
+    Options
+    - count
+    - page
+    - rcpt
+    - start
+    - end
+    - status
+    - resultcode
+    - notin_resultcode
+    - mid
+    - gid
     
+    Methods
+    - sent
+
+- ####Cancel < Applications
+ 
+        COOLSMS_CANCEL = Coolsms::SMS::Cancel.new( options )
+        COOLSMS_CANCEL.cancel
+
+    Options
+    - mid
+    - gid
+    
+    Methods
+    - cancel
+    
+- ####Applications
+
+    Methods
+    - set_fields
+    - fields
+    
+- ####TODO
+
+    - [O] Send
+    - [O] Sent
+    - [O] Cancel
+    - [O] Balance
+    - [O] Status
+
 ## Coolsms Rest API Document
 
 http://www.coolsms.co.kr/REST_API_Global
@@ -78,3 +123,7 @@ http://www.coolsms.co.kr/REST_API_Global
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create a new Pull Request
+
+## Source
+
+https://github.com/jun85664396/coolsms
