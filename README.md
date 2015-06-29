@@ -56,7 +56,7 @@ Or install it yourself as:
 
 - ####Status < Applications
 
-        COOLSMS_STATUS = Coolsms::SMS::Balance.new( options )
+        COOLSMS_STATUS = Coolsms::SMS::Status.new( options )
         COOLSMS_STATUS.status
     Options
     - count
