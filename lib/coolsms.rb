@@ -1,6 +1,6 @@
 # @name                Coolsms Rest API Helper
 # @author              JunSangPil
-# @version             0.1.0
+# @version             0.1.1
 # @url                 http://github.com/jun85664396/coolsms
 # @license             MIT License
 
