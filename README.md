@@ -18,6 +18,10 @@ Or install it yourself as:
 
     $ gem install coolsms
 
+Test
+
+    $ ruby test/coolsms_test.rb -v
+
 ## Configuration
 
 - `ENV['COOLSMS_KEY']` and `ENV['COOLSMS_SECRET_KEY']`
