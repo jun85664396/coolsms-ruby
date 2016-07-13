@@ -20,5 +20,4 @@ class Cancel < Applications
       { ret: res.code == "200", message: JSON.parse(res.body) }
     end
   end
-
 end

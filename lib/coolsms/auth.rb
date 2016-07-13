@@ -27,5 +27,4 @@ class Auth
   def auth
     { api_key: self.api_key, signature: self.signature, timestamp: self.timestamp, salt: self.salt }
   end
-
 end

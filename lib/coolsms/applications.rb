@@ -15,5 +15,4 @@ class Applications
     end
     return field
   end
-
 end

@@ -11,5 +11,4 @@ class Balance
       { ret: false, code: res.code }
     end
   end
-
 end
