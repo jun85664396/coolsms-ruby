@@ -33,20 +33,29 @@ Test
         COOLSMS_SEND = Coolsms::SMS::Send.new( { options } )
         COOLSMS_SEND.send( from, to, text)
         COOLSMS_SEND.set_field( { options} )
-    Options
+
+  * Options
     - type
-    - charset
-    - datetime
-    - delay
+    - image
+    - image_encoding
     - refname
     - country
+    - datetime
     - subject
+    - charset
     - srk
     - mode
     - extension
+    - delay
     - force_sms
+    - os_platform
+    - dev_lang
+    - sdk_version
+    - app_version
+    - sender_key
+    - template_code
 
-    Methods
+  * Methods
     - send
     - set_field
     
