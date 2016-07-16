@@ -12,15 +12,21 @@ gem 'coolsms'
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install coolsms
+```
+$ gem install coolsms
+```
 
 Test
 
-    $ ruby test/coolsms_test.rb -v
+```
+$ ruby test/coolsms_test.rb -v
+```
 
 ## Configuration
 
@@ -28,97 +34,119 @@ Test
 
 ## Usage 
 
-- ####Send < Applications
+####Send < Applications
 
-        COOLSMS_SEND = Coolsms::SMS::Send.new( { options } )
-        COOLSMS_SEND.send( from, to, text)
-        COOLSMS_SEND.set_field( { options} )
-    Options
-    - type
-    - charset
-    - datetime
-    - delay
-    - refname
-    - country
-    - subject
-    - srk
-    - mode
-    - extension
-    - force_sms
+```ruby
+COOLSMS_SEND = Coolsms::SMS::Send.new( { options } )
+COOLSMS_SEND.send( from, to, text)
+COOLSMS_SEND.set_field( { options} )
+```
 
-    Methods
-    - send
-    - set_field
+* Options
+  - type
+  - image
+  - image_encoding
+  - refname
+  - country
+  - datetime
+  - subject
+  - charset
+  - srk
+  - mode
+  - extension
+  - delay
+  - force_sms
+  - os_platform
+  - dev_lang
+  - sdk_version
+  - app_version
+  - sender_key
+  - template_code
+
+* Methods
+  - send
+  - set_field
     
-- ####Balance
+####Balance
 
-        COOLSMS_BALANCE = Coolsms::SMS::Balance.new
-        COOLSMS_BALANCE.balance
+```ruby
+COOLSMS_BALANCE = Coolsms::SMS::Balance.new
+COOLSMS_BALANCE.balance
+```
+
+* Methods
+  - balance
+
+####Status < Applications
+
+```ruby
+COOLSMS_STATUS = Coolsms::SMS::Status.new( options )
+COOLSMS_STATUS.status
+```
+
+* Options
+  - count
+  - unit
+  - date
+  - channel
     
-    Methods
-    - balance
+* Methods
+  - status
 
-- ####Status < Applications
+####Sent < Applications
 
-        COOLSMS_STATUS = Coolsms::SMS::Status.new( options )
-        COOLSMS_STATUS.status
-    Options
-    - count
-    - unit
-    - date
-    - channel
+```ruby
+COOLSMS_SENT = Coolsms::SMS::Sent.new( options )
+COOLSMS_SENT.sent
+```
+
+* Options
+  - count
+  - page
+  - rcpt
+  - start
+  - end
+  - status
+  - resultcode
+  - notin_resultcode
+  - mid
+  - gid
     
-    Methods
-    - status
+* Methods
+  - sent
 
-- ####Sent < Applications
+####Cancel < Applications
 
-        COOLSMS_SENT = Coolsms::SMS::Sent.new( options )
-        COOLSMS_SENT.sent
-    Options
-    - count
-    - page
-    - rcpt
-    - start
-    - end
-    - status
-    - resultcode
-    - notin_resultcode
-    - mid
-    - gid
+```ruby
+COOLSMS_CANCEL = Coolsms::SMS::Cancel.new( options )
+COOLSMS_CANCEL.cancel
+```
+
+* Options
+  - mid
+  - gid
     
-    Methods
-    - sent
-
-- ####Cancel < Applications
- 
-        COOLSMS_CANCEL = Coolsms::SMS::Cancel.new( options )
-        COOLSMS_CANCEL.cancel
-
-    Options
-    - mid
-    - gid
+* Methods
+  - cancel
     
-    Methods
-    - cancel
-    
-- ####Applications
+#### Applications
 
-    Methods
-    - set_fields
-    - fields
+* Methods
+  - set_fields
+  - fields
     
-- ####TODO
+#### TODO
 
-    - [O] Send
-    - [O] Sent
-    - [O] Cancel
-    - [O] Balance
-    - [O] Status
+- [x] Send
+- [x] Sent
+- [x] Cancel
+- [x] Balance
+- [x] Status
 
 ## Coolsms Rest API Document
 
-http://www.coolsms.co.kr/REST_API_Global
+* [Coolsms REST API](http://www.coolsms.co.kr/REST_API)
+* Support API version : 1.5
 
 ## Contributing
 

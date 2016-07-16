@@ -1,5 +1,4 @@
 require_relative 'test_helper'
-require 'coolsms'
 
 describe "Coolsms" do
   before do
@@ -9,25 +8,33 @@ describe "Coolsms" do
 
   it "Send" do
     send = Coolsms::SMS::Send.new(mode: "test")
-    res = send.send("010-8566-4396", "010-8566-4396", "Test Message")
+    res = send.send("01012345678", "01000000000", "Test Message")
+    p res
+
     assert_equal res[:code], "200"
   end
 
   it "Balance" do
     balance = Coolsms::SMS::Balance.new
     res = balance.balance
+    p res
+
     assert_equal res[:code], "200" 
   end
 
   it "Status" do
     status = Coolsms::SMS::Status.new
     res = status.status
+    p res
+
     assert_equal res[:code], "200" 
   end
 
   it "Sent" do
     sent = Coolsms::SMS::Sent.new
     res = sent.sent
+    p res
+
     assert_equal res[:code], "200" 
   end
 

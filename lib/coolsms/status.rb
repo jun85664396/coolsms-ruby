@@ -25,5 +25,4 @@ class Status < Applications
       { ret: false, code: res.code }
     end
   end
-
 end

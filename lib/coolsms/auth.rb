@@ -1,15 +1,15 @@
 class Auth
 
-  #Time Default : now
+  # Time Default : now
   attr_accessor :timestamp
 
-  #Salt
+  # Salt
   attr_accessor :salt
 
-  #API KEY
+  # API KEY
   attr_accessor :api_key
 
-  #API SECRET KEY
+  # API SECRET KEY
   attr_accessor :api_secret
 
   def initialize
@@ -27,5 +27,4 @@ class Auth
   def auth
     { api_key: self.api_key, signature: self.signature, timestamp: self.timestamp, salt: self.salt }
   end
-
 end
