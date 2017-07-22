@@ -34,7 +34,7 @@ $ ruby test/coolsms_test.rb -v
 
 ## Usage 
 
-####Send < Applications
+#### Send < Applications
 
 ```ruby
 COOLSMS_SEND = Coolsms::SMS::Send.new( { options } )
@@ -67,7 +67,7 @@ COOLSMS_SEND.set_field( { options} )
   - send
   - set_field
     
-####Balance
+#### Balance
 
 ```ruby
 COOLSMS_BALANCE = Coolsms::SMS::Balance.new
@@ -77,7 +77,7 @@ COOLSMS_BALANCE.balance
 * Methods
   - balance
 
-####Status < Applications
+#### Status < Applications
 
 ```ruby
 COOLSMS_STATUS = Coolsms::SMS::Status.new( options )
@@ -93,7 +93,7 @@ COOLSMS_STATUS.status
 * Methods
   - status
 
-####Sent < Applications
+#### Sent < Applications
 
 ```ruby
 COOLSMS_SENT = Coolsms::SMS::Sent.new( options )
@@ -115,7 +115,7 @@ COOLSMS_SENT.sent
 * Methods
   - sent
 
-####Cancel < Applications
+#### Cancel < Applications
 
 ```ruby
 COOLSMS_CANCEL = Coolsms::SMS::Cancel.new( options )
